@@ -1,16 +1,16 @@
+let rootDiv = document.getElementById('root')
 
 fetch('https://api.sampleapis.com/countries/countries')
     .then(response => response.json())
     .then(countries => {
+        console.log(countries);
         for (const countrie of countries) {
-
-            document.write(
-
+            let div = document.createElement("div");
+            div.className='countrisInfo'
+            div.innerHTML=
                 `
-                <div class = "countrisInfo">
-
                     <h3>${countrie.name}</h3>
-                    <p style = "text-align: center">Capital: <b> ${countrie.name}</b></p>
+                    <p class="tx_al_c">Capital: <b> ${countrie.name}</b></p>
                     <p> money :<b> ${countrie.currency}</b></p>
                     <p>phone Code: <b>${countrie.phone}</b></p>
                     <hr>
@@ -25,11 +25,9 @@ fetch('https://api.sampleapis.com/countries/countries')
                    <div>               
                    <img src = "${countrie.media.orthographic}" alt=""   style = "display:block; margin:auto; width: 70%">
                    </div>
-
-                </div>
                 `
 
-            );
+            rootDiv.appendChild(div)
         }
-      
+
     });

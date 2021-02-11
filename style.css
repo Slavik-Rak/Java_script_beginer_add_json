@@ -1,5 +1,5 @@
 .images img {
-    border: 2p solid rgb(37, 201, 78);
+    border: 2px solid rgb(37, 201, 78);
 }
 
 p {
@@ -8,4 +8,8 @@ p {
 
 .title_h3 {
     color: red;
+}
+
+.tx_al_c{
+    text-align: center
 }
